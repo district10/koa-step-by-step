@@ -77,4 +77,28 @@ run2(GeneratorFactory());
     { value: 600, done: false }
     1000
     { value: undefined, done: true }
+
+
+
+ * If: 
+     <-- console.log(gen2.next(500));
+     --> console.log(gen2.next());
+     a.k.a. next(), next(), next(1000)
+ * Then:
+    { value: 100, done: false }
+    { value: NaN, done: false }
+    1000
+    { value: undefined, done: true }
+ * So, how we see `yield' now?
+    <-- var a = yield 100; // next(val)
+              .----------------<\
+              |                 |
+              v                 |
+    --> a = next(val) = [yield 100];
+        ^         |
+        |         v
+        L---------/
+    next(val) = the yield outed 100
+    a         = the val in next(val)
+*    
 */
