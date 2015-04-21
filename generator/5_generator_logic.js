@@ -36,3 +36,45 @@ function run(generator) {
 }
 
 run(GeneratorFactory());
+
+// generator
+function run2(generator) {
+  console.log('start');
+  // 1
+  var ret = generator.next();
+  ret.value(console.log);
+  // 2
+  var ret = generator.next();
+  ret.value(console.log);
+  // 3
+  var ret = generator.next();
+  ret.value(console.log);
+  console.log('end');
+}
+
+run2(GeneratorFactory());
+
+
+/*
+ * an example from : http://www.sitepoint.com/javascript-generators-preventing-callback-hell/
+ * JS:
+ *
+    function* HelloGen2() {
+      var a = yield 100;                // next()    : yield out 100
+      var b = yield a + 100;            // next(500) : yield out 600 = 500+100
+     
+      console.log(b);                   // 600 not return to b, but next(1000) will pass 1000 to b.
+    }
+     
+    var gen2 = HelloGen2();
+     
+    console.log(gen2.next());     // {value: 100, done: false}
+    console.log(gen2.next(500));  // {value: 600, done: false}
+    console.log(gen2.next(1000)); // {value: undefined, done: true}
+ * 
+ * Output:
+    { value: 100, done: false }
+    { value: 600, done: false }
+    1000
+    { value: undefined, done: true }
+*/
