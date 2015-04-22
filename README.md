@@ -23,13 +23,13 @@ Several simple examples to show how `koa` works.
 
 1. [ o | helloworld](apps/1_helloworld.js)
 2. [ o | with router](apps/2_router.js)
-
-    ➜  koa-step-by-step git:(master) ✗ curl http://localhost:3000/login 
-    login page%                                                                                                                                                                             ➜  koa-step-by-step git:(master) ✗ curl -X POST -d "null" http://localhost:3000/login
-    Not Found%                                                                                                                                                                              ➜  koa-step-by-step git:(master) ✗ curl -X POST -d "{data: null}" http://localhost:3000/login
-    Not Found%                                                                                                                                                                              ➜  koa-step-by-step git:(master) ✗ curl -X POST -d "{data: null}" http://localhost:3000/logout
-    Redirecting to <a href="/">/</a>.%  
-
+```shell
+➜  koa-step-by-step git:(master) ✗ curl http://localhost:3000/login 
+login page%                                                                                                                                                                             ➜  koa-step-by-step git:(master) ✗ curl -X POST -d "null" http://localhost:3000/login
+Not Found%                                                                                                                                                                              ➜  koa-step-by-step git:(master) ✗ curl -X POST -d "{data: null}" http://localhost:3000/login
+Not Found%                                                                                                                                                                              ➜  koa-step-by-step git:(master) ✗ curl -X POST -d "{data: null}" http://localhost:3000/logout
+Redirecting to <a href="/">/</a>.%  
+```
 3. [ o | with template render](apps/3_view.js)
 4. [ ? | with middlewares](apps/4_middlewares.js)
 5. [ ? | a completed koa app](apps/5_authentication.js)
