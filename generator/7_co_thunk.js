@@ -14,8 +14,14 @@ function tick(time) {
     setTimeout(function () {
       done(null, time);
     }, time);
-  }
+  };
 }
+
+console.log('--before');
+console.log('typeof tick(1000): ' + typeof tick(1000));
+console.log('tick(1000)(): ' + tick(1000)());
+console.log('--after');
+
 
 function* GeneratorFunction() {
   var time;

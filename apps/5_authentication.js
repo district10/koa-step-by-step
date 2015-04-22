@@ -38,6 +38,9 @@ app.get('/logout', handleLogout);
 function* renderHome() {
   if (!this.session.user) {
     return this.status = 403;
+    // this.redirect('/login'); // this is bad
+    // console.log('render home failed');
+    // yield* renderLogin(); 
   }
 
   yield this.render('home', {
